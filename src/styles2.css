@@ -11,10 +11,10 @@ li {
 footer {
   font-family: monospace;
   font-size: 12px;
-  margin-top: 10px;
+  margin-top: 5px;
   position: absolute;
   margin-bottom: 0;
-  margin-left: 450px;
+  margin-left: 0;
 }
 .container {
   max-width: 650px;
