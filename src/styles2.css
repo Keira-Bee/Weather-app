@@ -8,6 +8,14 @@ ul {
 li {
   list-style: none;
 }
+footer {
+  font-family: monospace;
+  font-size: 12px;
+  margin-top: 10px;
+  position: absolute;
+  margin-bottom: 0;
+  margin-left: 450px;
+}
 .container {
   max-width: 650px;
 }
