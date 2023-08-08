@@ -1,6 +1,10 @@
 body {
   font-family: monospace;
 }
+h1 {
+  margin-bottom: 0;
+  line-height: 1;
+}
 ul {
   margin: 0;
   padding: 0;
@@ -9,28 +13,53 @@ li {
   list-style: none;
 }
 footer {
-  font-family: monospace;
   font-size: 12px;
-  margin-top: 5px;
+  margin-top: 20px;
   position: absolute;
   margin-bottom: 0;
-  margin-left: 0;
 }
-.container {
-  max-width: 650px;
+#current-day {
+  margin-bottom: 0;
+}
+#searched-city-temperature {
+  font-size: 50px;
+  margin-top: -20px;
+  line-height: 1;
+}
+#c-temperature,
+#f-temperature {
+  margin-top: -50px;
+}
+#weather-conditions {
+  font-size: 20px;
+  padding: 20px;
+  margin: 0;
+  list-style: none;
+  color: black;
+}
+#weather-description {
+  font-size: 35px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+.weather-app-wrapper {
+  max-width: 600px;
+  margin: 20px auto;
 }
 .weather-app {
   border: 1px solid #dadde1;
-  margin: 20px auto;
   padding: 15px;
   border-radius: 10px;
 }
 .weather-search {
   margin-bottom: 20px;
 }
-.weather-icon {
+.current-weather-icon {
   font-size: 100px;
   color: blue;
+  line-height: 1;
 }
 .grid-forecast {
   display: grid;
