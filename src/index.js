@@ -51,27 +51,30 @@ function formatDate(timestamp) {
 
 function searchedCity(city) {
   let units = "metric";
-  let apiKey = "667d9f573c8af4c33457be5d561a9148";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  let apiKey = "b2d392316cfa1a65t53d71a032b444co";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showWeatherCondition);
 }
 
 function showWeatherCondition(response) {
-  document.querySelector("#searched-city").innerHTML = response.data.name;
+  document.querySelector("#searched-city").innerHTML = response.data.city;
   document.querySelector("#searched-city-temperature").innerHTML = Math.round(
-    response.data.main.temp
+    response.data.temperature.current
   );
   document.querySelector("#humidity").innerHTML = Math.round(
-    response.data.main.humidity
+    response.data.temperature.humidity
   );
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
   document.querySelector("#weather-description").innerHTML =
-    response.data.weather[0].description;
+    response.data.condition.description;
   document.querySelector("#current-day").innerHTML = formatDate(
-    response.data.dt * 1000
+    response.data.time * 1000
   );
+  document
+    .querySelector("#current-weather-icon")
+    .setAttribute("src", response.data.condition.icon_url);
 }
 
 function changeCity(event) {
@@ -84,9 +87,8 @@ function showCurrentPosition(position) {
   console.log(position);
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
-  let apiKey = "667d9f573c8af4c33457be5d561a9148";
-  let units = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
+  let apiKey = "b2d392316cfa1a65t53d71a032b444co";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${longitude}&lat=${latitude}&key=${apiKey}`;
   axios.get(apiUrl).then(showWeatherCondition);
 }
 

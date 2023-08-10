@@ -59,7 +59,7 @@ footer {
 .weather-search {
   margin-bottom: 20px;
 }
-.current-weather-icon {
+#current-weather-icon {
   font-size: 100px;
   color: blue;
   line-height: 1;
