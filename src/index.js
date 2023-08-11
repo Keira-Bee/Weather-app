@@ -101,6 +101,8 @@ function getCurrentLocation(event) {
 
 function celsiusConvert(event) {
   event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   let currentTemperature = document.querySelector("#searched-city-temperature");
   currentTemperature.innerHTML = Math.round(celsiusTemperature);
 }
@@ -108,6 +110,7 @@ function celsiusConvert(event) {
 function convertFahrenheit(event) {
   event.preventDefault();
   celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let fahrenheitTemperature = Math.round((celsiusTemperature * 9) / 5 + 32);
   let currentTemperature = document.querySelector("#searched-city-temperature");
   currentTemperature.innerHTML = fahrenheitTemperature;

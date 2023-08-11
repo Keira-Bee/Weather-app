@@ -32,6 +32,7 @@ footer {
 #celsius-link,
 #fahrenheit-link {
   margin-top: -50px;
+  text-decoration: none;
 }
 .units .active {
   color: black;
@@ -39,7 +40,6 @@ footer {
 }
 .units .active:hover {
   text-decoration: none;
-  color: red;
 }
 #weather-conditions {
   font-size: 20px;
