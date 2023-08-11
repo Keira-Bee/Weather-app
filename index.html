@@ -21,26 +21,27 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
-          <form class="weather-search" id="city-weather-search">
+          <form id="city-weather-search">
             <div class="row">
               <div class="col-6">
                 <input
                   type="search"
                   placeholder="Find a city..."
-                  class="form-control"
+                  class="form-control mb-3"
                   id="city-search"
+                  autocomplete="off"
                 />
               </div>
               <div class="col-3">
                 <input
                   type="submit"
                   value="search"
-                  class="form-control btn btn-primary w-100"
+                  class="form-control btn btn-primary w-100 mb-3"
                 />
               </div>
               <div class="col-3">
                 <button
-                  class="btn btn-success w-100"
+                  class="btn btn-success w-100 mb-3"
                   id="current-location-button"
                 >
                   Current
@@ -54,10 +55,10 @@
               <ul>
                 <li>Last updated: <span id="current-day"></span></li>
                 <li>
-                  <span class="units">
-                    <span id="searched-city-temperature"></span>
-                    <a href="#" id="c-temperature">°C</a> |
-                    <a href="#" id="f-temperature">°F</a>
+                  <strong id="searched-city-temperature"></strong>
+                  <span class="units"
+                    ><a href="#" id="celsius-link" class="active">°C</a> |
+                    <a href="#" id="fahrenheit-link">°F</a>
                   </span>
                 </li>
               </ul>

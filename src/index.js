@@ -57,6 +57,8 @@ function searchedCity(city) {
 }
 
 function showWeatherCondition(response) {
+  celsiusTemperature = response.data.temperature.current;
+
   document.querySelector("#searched-city").innerHTML = response.data.city;
   document.querySelector("#searched-city-temperature").innerHTML = Math.round(
     response.data.temperature.current
@@ -97,28 +99,32 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(showCurrentPosition);
 }
 
+function celsiusConvert(event) {
+  event.preventDefault();
+  let currentTemperature = document.querySelector("#searched-city-temperature");
+  currentTemperature.innerHTML = Math.round(celsiusTemperature);
+}
+
+function convertFahrenheit(event) {
+  event.preventDefault();
+  celsiusLink.classList.remove("active");
+  let fahrenheitTemperature = Math.round((celsiusTemperature * 9) / 5 + 32);
+  let currentTemperature = document.querySelector("#searched-city-temperature");
+  currentTemperature.innerHTML = fahrenheitTemperature;
+}
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", celsiusConvert);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", convertFahrenheit);
+
+let celsiusTemperature = null;
+
 let form = document.querySelector("form");
 form.addEventListener("submit", changeCity);
 
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
-searchedCity("Paris");
-
-// function celsiusConvert(event) {
-//   event.preventDefault();
-//   let currentTemperature = document.querySelector("#current-temperature");
-//   currentTemperature.innerHTML = 19;
-// }
-
-// function fahrenheitConvert(event) {
-//   event.preventDefault();
-//   let currentTemperature = document.querySelector("#current-temperature");
-//   currentTemperature.innerHTML = 66;
-// }
-
-// let cTemperature = document.querySelector("#c-temperature");
-// cTemperature.addEventListener("click", celsiusConvert);
-
-// let fTemperature = document.querySelector("#f-temperature");
-// fTemperature.addEventListener("click", fahrenheitConvert);
+searchedCity("Perth");

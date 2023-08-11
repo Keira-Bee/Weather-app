@@ -29,9 +29,17 @@ footer {
   margin-top: -20px;
   line-height: 1;
 }
-#c-temperature,
-#f-temperature {
+#celsius-link,
+#fahrenheit-link {
   margin-top: -50px;
+}
+.units .active {
+  color: black;
+  cursor: default;
+}
+.units .active:hover {
+  text-decoration: none;
+  color: red;
 }
 #weather-conditions {
   font-size: 20px;
@@ -55,9 +63,6 @@ footer {
   border: 1px solid #dadde1;
   padding: 15px;
   border-radius: 10px;
-}
-.weather-search {
-  margin-bottom: 20px;
 }
 #current-weather-icon {
   font-size: 100px;
