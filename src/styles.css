@@ -69,19 +69,21 @@ footer {
   color: blue;
   line-height: 1;
 }
-.grid-forecast {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 30px;
-}
-.forecast {
-  text-align: center;
+.weather-forecast-day {
   font-size: 20px;
+  text-align: center;
 }
 .forecast .emoji {
   text-align: center;
   font-size: 30px;
-  margin-top: 20px;
+  margin-top: 0;
+}
+.forecast-temperature {
+  font-size: 16px;
+  text-align: center;
+}
+.forecast-temperature-min {
+  opacity: 0.6;
 }
 .weekend {
   background: rgba(244, 180, 41, 0.45);
