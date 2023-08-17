@@ -22,7 +22,8 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response);
   let forecastElement = document.querySelector("#forecast");
   let days = ["Wed", "Thu", "Fri", "Sat", "Sun"];
   let forecastHTML = `<div class="row">`;
@@ -42,6 +43,13 @@ function displayForecast() {
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+  console.log(response.data.daily);
+}
+
+function getForecast(coordinates) {
+  let apiKey = "b2d392316cfa1a65t53d71a032b444co";
+  let apiURL = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
+  axios.get(apiURL).then(displayForecast);
 }
 
 function searchedCity(city) {
@@ -72,6 +80,8 @@ function showWeatherCondition(response) {
   document
     .querySelector("#current-weather-icon")
     .setAttribute("src", response.data.condition.icon_url);
+
+  getForecast(response.data.coordinates);
 }
 
 function changeCity(event) {
@@ -81,7 +91,6 @@ function changeCity(event) {
 }
 
 function showCurrentPosition(position) {
-  console.log(position);
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let apiKey = "b2d392316cfa1a65t53d71a032b444co";
@@ -126,4 +135,3 @@ let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 searchedCity("Perth");
-displayForecast();
