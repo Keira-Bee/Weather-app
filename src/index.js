@@ -74,7 +74,7 @@ function searchedCity(city) {
 }
 
 function showWeatherCondition(response) {
-  celsiusTemperature = response.data.temperature.current;
+  Temperature = response.data.temperature.current;
 
   document.querySelector("#searched-city").innerHTML = response.data.city;
   document.querySelector("#searched-city-temperature").innerHTML = Math.round(
