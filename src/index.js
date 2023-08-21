@@ -117,31 +117,6 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(showCurrentPosition);
 }
 
-function celsiusConvert(event) {
-  event.preventDefault();
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let currentTemperature = document.querySelector("#searched-city-temperature");
-  currentTemperature.innerHTML = Math.round(celsiusTemperature);
-}
-
-function convertFahrenheit(event) {
-  event.preventDefault();
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let fahrenheitTemperature = Math.round((celsiusTemperature * 9) / 5 + 32);
-  let currentTemperature = document.querySelector("#searched-city-temperature");
-  currentTemperature.innerHTML = fahrenheitTemperature;
-}
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", celsiusConvert);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", convertFahrenheit);
-
-let celsiusTemperature = null;
-
 let form = document.querySelector("form");
 form.addEventListener("submit", changeCity);
 
