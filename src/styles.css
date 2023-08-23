@@ -38,9 +38,10 @@ footer {
   border-radius: 8px;
 }
 #current-day {
-  margin-bottom: 100px;
+  margin-bottom: 10px;
 }
 #searched-city-temperature {
+  display: block;
   margin-top: 30px;
   font-size: 50px;
   line-height: 1.2;
@@ -80,8 +81,9 @@ footer {
   border-radius: 8px;
 }
 .units {
-  font-size: 20px;
   vertical-align: top;
+  font-size: 20px;
+  color: red;
 }
 .forecast-temperature-min {
   opacity: 0.6;
