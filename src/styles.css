@@ -24,7 +24,7 @@ li:first-letter {
   text-transform: capitalize;
 }
 hr {
-  border-top: 5px solid #608092;
+  border-top: 5px solid rgba(96, 128, 146, 0.7);
 }
 footer {
   max-width: 600px;
@@ -35,23 +35,11 @@ footer {
   background-size: 100%;
   padding: 5px 8px;
   border: 1px #608092 solid;
-  border-radius: 8px;
-}
-#current-day {
-  margin-bottom: 10px;
-}
-#searched-city-temperature {
-  display: block;
-  margin-top: 30px;
-  font-size: 50px;
-  line-height: 1.2;
+  border-radius: 5px;
 }
 #current-weather-icon {
   width: 200px;
   height: 200px;
-  padding: 2px;
-  border: 1px dashed #608092;
-  border-radius: 50%;
   margin-top: 10px;
 }
 #weather-description {
@@ -78,12 +66,30 @@ footer {
   background-color: #d3e2e9;
   padding: 15px;
   border: 1px #608092 solid;
-  border-radius: 8px;
+  border-radius: 5px;
+}
+.time {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.searched-city-temperature {
+  display: block;
+  margin-top: 80px;
+  font-size: 50px;
+  line-height: 1;
+  margin-left: -145px;
 }
 .units {
-  vertical-align: top;
+  position: relative;
   font-size: 20px;
-  color: red;
+  color: #000000;
+  top: -20px;
+  font-weight: 700;
+  left: -30px;
+}
+.border-right {
+  border-right: 5px solid rgba(182, 201, 212, 0.7);
 }
 .forecast-temperature-min {
   opacity: 0.6;
