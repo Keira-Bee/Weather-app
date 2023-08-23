@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My weather app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -23,7 +29,7 @@
         <div class="weather-app">
           <form id="city-weather-search">
             <div class="row">
-              <div class="col-6">
+              <div class="col-7">
                 <input
                   type="search"
                   placeholder="Find a city..."
@@ -39,12 +45,12 @@
                   class="form-control btn btn-primary w-100 mb-3"
                 />
               </div>
-              <div class="col-3">
+              <div class="col-2">
                 <button
                   class="btn btn-success w-100 mb-3"
                   id="current-location-button"
                 >
-                  Current
+                  <img src="images/home.png" alt="home pin" />
                 </button>
               </div>
             </div>
@@ -52,28 +58,47 @@
           <div class="row">
             <div class="col-6">
               <h1 class="city" id="searched-city"></h1>
-              <ul id="searched-city-quick-facts">
+              <ul>
                 <li>Last updated: <span id="current-day"></span></li>
                 <li>
-                  <strong id="searched-city-temperature"></strong>
+                  <strong>
+                    <span id="searched-city-temperature"></span>
+                  </strong>
                   <span class="units"> °C </span>
                 </li>
               </ul>
             </div>
             <div class="col-6 weather-icon">
-              <div class="d-flex justify-content-center">
-                <img
-                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-night.png"
-                  alt=""
-                  id="current-weather-icon"
-                />
-              </div>
+              <img
+                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-night.png"
+                alt=""
+                id="current-weather-icon"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div id="weather-conditions">
               <ul>
-                <div id="weather-conditions">
-                  <li><span id="weather-description"></span></li>
-                  <li>Humidity: <span id="humidity"></span>%</li>
-                  <li>Wind: <span id="wind"></span>km/h</li>
-                </div>
+                <li>
+                  <img src="images/weather.png" /><span
+                    style="padding-left: 10px"
+                  ></span>
+                </li>
+                <li id="weather-description"></li>
+                <li style="padding-left: 20px">
+                  <img src="images/humidity.png" /><span
+                    style="padding-left: 10px"
+                  >
+                    Humidity:
+                    <span id="humidity"></span>%</span
+                  >
+                </li>
+                <li style="padding-left: 20px">
+                  <img src="images/wind.png" /><span style="padding-left: 10px">
+                    Wind:
+                    <span id="wind"></span>km/h</span
+                  >
+                </li>
               </ul>
             </div>
           </div>
@@ -88,11 +113,17 @@
             >
             by Keira
           </span>
-          <div class="img-attribution">
-            Image by
+          <div class="img-attribution right">
+            Background by
             <a
               href="https://www.freepik.com/free-photo/white-blue-clouds-arrangement_14140113.htm#query=cutout%20cloud&position=9&from_view=search&track=ais"
               >Freepik</a
+            >
+            and Weather icons created by
+            <a
+              href="https://www.flaticon.com/free-icons/weather"
+              title="weather icons"
+              >GOWI - Flaticon</a
             >
           </div>
         </footer>
